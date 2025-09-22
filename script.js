@@ -24,3 +24,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // 滚动时实时检查
     window.addEventListener('scroll', checkScroll);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const flipCards = document.querySelectorAll('.flip-card');
+  
+  flipCards.forEach(card => {
+    // 点击翻转
+    card.addEventListener('click', function() {
+      this.classList.toggle('flipped');
+    });
+    
+    // 键盘支持
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.classList.toggle('flipped');
+      }
+    });
+    
+    // 添加悬停效果
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-5px)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+    });
+  });
+});

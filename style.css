@@ -39,6 +39,99 @@ section {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+.album-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.album-cover {
+    width: 150px; /* 调整为标准专辑尺寸 */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px; /* 改为圆角矩形（如需直角可设为0） */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+/* 添加到style.css */
+.podcast-card {
+    display: flex;
+    gap: 20px;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.podcast-card:hover {
+    background: rgb(255, 255, 255);
+    transform: translateY(-3px);
+}
+
+.podcast-cover {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.podcast-info {
+    flex: 1;
+}
+
+.listen-btn {
+    display: inline-block;
+    background: #4a6fa5;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.watching-container {
+  display: flex;
+  gap: 40px;
+}
+.watching-grid {
+    display: flex;
+    gap: 70px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+/* 长方形海报样式 */
+.card img {
+    width: 200px;  /* 固定宽度 */
+    height: auto;  /* 高度自适应 */
+    aspect-ratio: 2/3; /* 强制16:9比例 */
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+.card {
+  text-align: center;  /* 让文字居中 */
+}
+
+
+/* 悬停动画 */
+.tvshow-poster:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* 文字信息区域 */
+.tvshow-detail {
+    flex: 2;
+}
+
+/* 元信息样式 */
+.tvshow-meta {
+    color: #666;
+    margin: 8px 0;
+    font-size: 14px;
+}
 
 h1, h2, h3 {
     color: #2c3e50;
@@ -81,3 +174,80 @@ section.show {
     opacity: 1;
     transform: translateY(0);
 }
+.unknown-section {
+  padding: 40px 20px;
+  margin-top: 60px;
+  background: hwb(0 100% 0%); /* 暖色调背景，可改 */
+  border-top: 2px solid #e5ded0;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  text-align: left;
+  color: hsl(227, 93%, 23%);
+}
+
+.flip-grid {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.flip-card {
+  width: 180px;
+  height: 260px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(54, 38, 181, 0.1);
+}
+
+.flip-card-front {
+  background: lab(82.99% -2.5 -11.53);
+  color: #333;
+}
+
+.flip-card-back {
+  background: #fff;
+  transform: rotateY(180deg);
+  color: #444;
+}
+
+.card-content h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.card-content .hint {
+  font-size: 12px;
+  color: #433f45;
+}
+
+
